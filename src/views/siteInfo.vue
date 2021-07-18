@@ -3,17 +3,8 @@
   <div class="full_box">
 
     <!--header-->
-    <div class="content_center" style="position:fixed; top:0; height:50px; width:inherit; top:0;">
-      <div class="col-xs-3">
-        <img src="../assets/imgs/icon/back.png" width="25" height="25" alt="返回" />
-      </div>
-      <div class="col-xs-6" align="center" style="font-size:16px;">站点信息</div>
-      <div class="col-xs-3"></div>
-    </div>
-
-    <!--分割线-->
-    <div class="split_box">
-      <div class="split_line"></div>
+    <div style="position:fixed; top:0; width:inherit; top:0; z-index:1000;">
+      <my-header pageName="站点信息" doSearch="false" backPath="/" />
     </div>
     
     <div class="container-fluid" style="height:100%; padding-left:0; padding-right:0;">
@@ -86,12 +77,17 @@
 </template>
 
 <script>
+import myHeader from '@/components/Header.vue'
+
 export default {
   name:"siteInfo",
   data() {
     return {
       
     }
+  },
+  components:{
+    myHeader,
   },
   methods: {
     modify:function(){
@@ -106,7 +102,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
   input {
 		border:0 ;
 		outline:0 ;

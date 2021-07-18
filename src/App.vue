@@ -48,6 +48,14 @@ html {
 	height:100%;
 }
 
+.full_height {
+	height:100%;
+}
+
+.full_width {
+	width:100%;
+}
+
 a:hover {
 	cursor:pointer;
 }
@@ -72,6 +80,31 @@ a:hover {
 	box-pack:center;
 	box-align:center;
 
+}
+
+.content_center_start{
+	z-index:100;
+	display:-moz-box;
+	-moz-box-pack:start;
+	-moz-box-align:center;
+	display:-webkit-box;
+	-webkit-box-pack:start;
+	-webkit-box-align:center;
+	display:box;
+	box-pack:start;
+	box-align:center;
+}
+.content_center_end{
+	z-index:100;
+	display:-moz-box;
+	-moz-box-pack:end;
+	-moz-box-align:center;
+	display:-webkit-box;
+	-webkit-box-pack:end;
+	-webkit-box-align:center;
+	display:box;
+	box-pack:end;
+	box-align:center;
 }
 
 .doSomething { 
@@ -106,5 +139,6 @@ a:hover {
 .split_line {
 	width:100%; height:2px; background-image: linear-gradient(to Right, #fff,#87CEFA , #fff);
 }
+
 
 </style>

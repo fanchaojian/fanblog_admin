@@ -1,18 +1,9 @@
-<!--文章管理-->
+<!--随笔管理-->
 <template>
   <div class="full_box">
     <!--header-->
-    <div class="content_center" style="position:fixed; top:0; height:50px; width:inherit; top:0;">
-      <div class="col-xs-3">
-        <img src="../assets/imgs/icon/back.png" width="25" height="25" alt="返回" />
-      </div>
-      <div class="col-xs-6" align="center" style="font-size:16px;">站点信息</div>
-      <div class="col-xs-3"></div>
-    </div>
-
-    <!--分割线-->
-    <div class="split_box">
-      <div class="split_line"></div>
+    <div style="position:fixed; top:0; width:inherit; top:0; z-index:1000;">
+      <my-header pageName="博客管理" doSearch="true" @func="getKeywords" backPath="/" />
     </div>
 
     <div class="container-fluid" style="height:100%; padding-left:0; padding-right:0;">
@@ -20,126 +11,107 @@
       <div class="col-xs-12 col-md-8" style="position:relative; height:100%;padding-left:0; padding-right:0;">
         <!--展示区域-->
         <div style="width:100%; height:100%; padding-top:50px; overflow-x:hidden;">
-          <div id="content_box" style="width:100%; height:100%; box-sizing:content-box; padding-right:25px;  overflow-y:scroll;">
-            <div style="padding-left:10px; padding-right:10px; width:100%; height:100px;">
-              <!--添加文章-->
-              <div style="width:120px; height:65px; border:1px solid #AFEEEE; border-radius:4px;margin-top:30px; text-align:center;">
-                <span class="iconfont icon-plus" style="line-height:65px;"></span>
+          <div id="content_box" style="padding-top:10px;">
+            <div class="article_p_box">
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/1.jpg" width="100%" height="100%" style="border-radius:5px;"/>
+                  </div>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333; ">这是文章的标题</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
+                  <div style="position:absolute; bottom:0; right:5px;">
+                    <span onclick="toggleExtra(this)" class="iconfont icon-ellipsis" style="font-weight:bold; font-size:18px;"></span>
+                  </div>
+                  
+                  <div class="article_extra" style="display:none;">
+                    <img src="@/assets/imgs/icon/daiban1.png" alt="加入待办" title="加入待办"/>
+                    <img src="@/assets/imgs/icon/bianji_3.png" alt="编辑" title="编辑"/>
+                    <img src="@/assets/imgs/icon/delete2.png" alt="删除" title="删除"/>
+                  </div>
+                </div>
               </div>
               
-              <!--文章列表-->
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/14.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长这是文章的标题这是文章的标题这是文章的标题这是文章的标题。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/5.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/m11.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/7.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/9.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/10.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
-              <div style="background-color:white ; position:relative;" class="article_box">
-                <div style="padding:4px; width:80px; min-width:80px;">
-                  <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" />
-                </div>
-                <div style="min-width:200px; height:100%; flex-grow:2; padding:5px 10px;">
-                  <div style="width:100%; height:40px;">
-                    <p>这是文章的标题，可能会很长，如这个秋天和往年不一样，有你在，很温暖。</p>
+              <div class="article_box">
+                <div class="box">
+                  <div style="height:100px; width:100%; padding:1px;">
+                    <img src="@/assets/imgs/test/11.jpg" width="100%" height="100%" style="border-radius:5px;"/>
                   </div>
-                  <p style="padding-top:10px; padding-bottom:0;">发布于2020-1-21</p>
-                </div>
-                
-                  <div class="extra_model" style="position:absolute; bottom:2px; right:10px; ">
-                  <span class="iconfont icon-edit-square model_function" title="编辑"></span>
-                  <span class="iconfont icon-delete model_function" style="margin-left:15px;" title="删除"></span>
+                  <div style="padding:5px;">
+                    <p style="font-size:12px; color:#333;">这是文章的标题,可能会很长很长。</p>
+                    <span style="font-size:12px; ">创建于：2021-5-26</span>
+                  </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
@@ -154,45 +126,116 @@
 </template>
 
 <script>
+import myHeader from '@/components/Header.vue'
+
 export default {
-  name:"articles",
+  name:"essays",
   data() {
     return {
-      
+      searchKey:"",  //搜索的关键字
     }
   },
-  methods: {
+  components:{
+    myHeader,
+  },
+  methods: { 
+    getKeywords:function(param){
+      this.searchKey = param ;
+    },
+    //块项目瀑布排列算法
+    waterFlow:function(parent, chirld){
+      console.log("开始重新排列") ; 
+      var wparent = $("."+parent);
+      var allArr = $('.'+chirld);
+      //var wscreenWidth = document.documentElement.clientWidth;//获取屏幕宽度
+      var wscreenWidth = wparent.parent()[0].clientWidth; //获取父级元素的宽度
+      //计算每行显示的个数
+      var num = Math.floor(wscreenWidth/$(allArr[0]).outerWidth(true));
+      //动态设置父级的宽度
+      wparent.css({"width":$(allArr[0]).outerWidth(true)*num+"px"}) ; 
+      
+      //获得每行的最小高度
+      this.getMinHeightOfCols(allArr, num);
+    },
+    getMinHeightOfCols:function(chirdArr, num){
+      //创建数组, 用来放置每一行的高度
+      var onlyOneColsArr = [];
+      for(var i = 0; i<chirdArr.length; i++){
+
+        if(i<num){
+          //num为传进来的参数, 即为每行放图片的张数, 此步骤的目的是为了将第一行每张图片的高度遍历出来存放如新数组
+          onlyOneColsArr[i]=chirdArr[i].offsetHeight;
+        } else {
+          //获取数组中的最小值
+          var minHeightOfCols = Math.min.apply(null, onlyOneColsArr);
+          
+          var minHeightOfindex = this.getminIndex(onlyOneColsArr, minHeightOfCols);
+          //定义布局方式为绝对布局，并设置盒子的位置
+          $(chirdArr[i]).css("position","absolute") ; 
+          $(chirdArr[i]).css("top",minHeightOfCols+"px") ; 
+          $(chirdArr[i]).css("left",chirdArr[minHeightOfindex].offsetLeft + "px") ; 
+          
+          //将两张图片高度相加得到一个新的高度用来进行下一次的计算
+          onlyOneColsArr[minHeightOfindex] += chirdArr[i].offsetHeight;
+        }
+      }
+
+    },
     
+    //获取最小高度元素的下标
+    getminIndex:function(onlyOneColsArr, min){
+      for(var i in onlyOneColsArr){
+        if(onlyOneColsArr[i] == min){
+          return i;
+        }
+      }
+    },
+    
+    toggleExtra:function(obj){
+      $(obj).parents(".box").find(".article_extra").toggle() ; 
+    }
   },
   mounted() {
-    
+      this.waterFlow("article_p_box", "article_box");
   },
 }
 </script>
 
-<style scope>
+<style scoped>
 
-	#content_box::-webkit-scrollbar {display:none}
-	
+.article_p_box{
+		position:relative ;
+		margin:0 auto;
+	}
 	.article_box {
-		width:100%; height:80px; margin-top:30px; padding:; border:1px solid #AFEEEE; border-radius:8px;
-		display:flex;
-		flex-direction:row ; 
-		flex-wrap:nowrap ;
-		justify-content:flex-start ;
+		padding:5px 5px;
+		float:left;
 	}
-	.article_box:hover {
-		border:1px solid #87CEFA;
-		box-shadow: 0 0 2px 2px #F0F8FF;
+	
+	.box {
+		width:150px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)  ; 
+		border-radius:5px;
+		position:relative;
 	}
-	.model_function {
-		font-size:20px; 
-		color:#777; 
-		display: inline-block;
+	
+	.article_extra {
+		width:50px; 
+		height:100px; 
+		border-radius:5px; 
+		border:1px solid #ddd; 
+		box-shadow:0 0 4px 1px #ddd; 
+		position:absolute; 
+		bottom:25px; 
+		right:5px; 
 		background-color:#fff;
-		border: 1px solid #aaa;
-		width: 30px;
-		text-align: center;
-		border-radius: 50%;
+	}
+	
+	.article_extra img {
+		display:block;
+		margin:0 auto;
+		width:20px;
+		height:20px;
+		margin-top:10px;
 	}
 </style>

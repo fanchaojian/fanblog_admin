@@ -2,33 +2,32 @@
 <template>
   <div class="full_box"> 
     <div id="header" class="content_center" style="">
-      <div class="col-xs-6 content_center" style="-webkit-box-pack:start;-moz-box-pack:start; box-pack:start;">
+      <div class="col-xs-5 content_center" style="-webkit-box-pack:start;-moz-box-pack:start; box-pack:start;">
         <div @click="showExtra" style="width:30px; height:30px; border-radius:50%;">
           <img src="../assets/imgs/headimg.jpg" width="100%" height="100%" style="border-radius:50%;"/>
         </div>
-        <div style="font:20px 楷体; padding-left:10px;">南国晚秋</div>
+        <div style="font:16px 楷体; padding-left:10px;">南国晚秋</div>
       </div>
       
-      <div class="col-xs-6 content_center" style="-webkit-box-pack:end; -moz-box-pack:end; box-pack:start;">
-        <div class="content_center" style="width:22px; height:22px; border-radius:50%; border:1px solid #aaa; margin-right:8px;" >
-          <span class="iconfont icon-mail"></span>
-        </div>
-        
+      <div class="col-xs-7 content_center" >
+        <img src="@/assets/imgs/icon/message.png" width="25" style="margin-right:8px;" />
+
         <div style="width:30px; height:30px; border-radius:50%;">
           <img src="../assets/imgs/ggg.jpg" width="100%" height="100%" style="border-radius:50%;"/>
         </div>
-        <div style="font:16px 宋体; padding-left:8px;">你若在，便好</div>
+        <div style="font:14px 宋体; padding-left:8px;">你若在，便好</div>
       </div>
     </div>
+
     <!--其他操作-->
     <div id="extra" class="function_group_wrapper" style="display:none;">
       <div class="function_group">
         <div id="extra_box" style="height:80px;">
           <div class="extra_item_box">
             <div class="content_center full_box">
-              <div class="extra_item">
+              <div class="extra_item" @click="$router.push('/siteInfo')">
                 <div class="content_center" style="height:50%; width:100%;">
-                  <span class="iconfont icon-earth"></span> 
+                  <img src="@/assets/imgs/icon/zdxx.png" width="20" />
                 </div>
                 <div class="content_center" style="height:50%; width:100%;">
                   <span class="note" style="font-size:13px;">站点信息</span>
@@ -38,9 +37,9 @@
           </div>
           <div class="extra_item_box">
             <div class="content_center full_box">
-              <div class="extra_item">
+              <div class="extra_item" @click="$router.push('/loginInfo')">
                 <div class="content_center" style="height:50%; width:100%;">
-                  <span class="iconfont icon-user"></span> 
+                  <img src="@/assets/imgs/icon/wdxx.png" width="20" />
                 </div>
                 <div class="content_center" style="height:50%; width:100%;">
                   <span class="note" style="font-size:13px;">我的信息</span>
@@ -52,7 +51,7 @@
             <div class="content_center full_box">
               <div class="extra_item">
                 <div class="content_center" style="height:50%; width:100%;">
-                  <span class="iconfont icon-deleteteam"></span> 
+                  <img src="@/assets/imgs/icon/yonghu.png" width="20" />
                 </div>
                 <div class="content_center" style="height:50%; width:100%;">
                   <span class="note" style="font-size:13px;">站点用户</span>
@@ -60,11 +59,11 @@
               </div>
             </div>
           </div>
-          <div class="extra_item_box">
+          <div class="extra_item_box" @click="$router.push('/login')">
             <div class="content_center full_box">
               <div class="extra_item">
                 <div class="content_center" style="height:50%; width:100%;">
-                  <span class="iconfont icon-logout"></span> 
+                  <img src="@/assets/imgs/icon/tcdl.png" width="20" /> 
                 </div>
                 <div class="content_center" style="height:50%; width:100%;">
                   <span class="note" style="font-size:13px;">退出登录</span>
@@ -77,10 +76,6 @@
       </div>
     </div>
 
-    <!--分割线-->
-    <div style="position:fixed; top:65px; width:inherit; background-color:black; z-index:100;">
-      <div style="width:100%; height:1.5px; background-color:#87CEFA;"></div>
-    </div>
 
     
     <!--内容-->
@@ -91,14 +86,14 @@
           <div style="width:100%; height:100%; box-sizing:content-box; padding-right:25px; overflow-y:scroll;">
             <div class="" @click="hideExtra" style="">
               <div class=" function_group_wrapper" style="height:255px;">
-                <div style="height:40px;">
+                <div style="height:35px; ">
                   <span class="function_group_title">正在进行的工作</span>
                 </div>
                 <div class="function_group">
                   <div class="scroll_container" style="height:200px; ">
                     <div class="article_box">
-                      <div style="width:100%; height:100px;">
-                        <img src="../assets/imgs/eee.jpeg"/>
+                      <div style="width:100%; height:100px; padding:1px;">
+                        <img src="../assets/imgs/eee.jpeg" style="border-radius:5px;"/>
                       </div>
                       <div class="article_title_box">
                         <a>这个秋天和我一起呀。</a>
@@ -106,8 +101,8 @@
                       </div>
                     </div>
                     <div class="article_box" >
-                      <div style="width:100%; height:100px;">
-                        <img src="../assets/imgs/fff.jpg"/>
+                      <div style="width:100%; height:100px; padding:1px;">
+                        <img src="../assets/imgs/fff.jpg" style="border-radius:5px;"/>
                       </div>
                       <div class="article_title_box">
                         <a>谢谢你，那个陪伴了我8年的女孩。</a>
@@ -121,10 +116,10 @@
               </div>
               
               
-              <!--站点整体情况-->
-              <div class=" function_group_wrapper" style="height:175px;">
-                <div style="height:35px;">
-                  <span class="function_group_title">站点整体情况</span>
+              <!--站点统计-->
+              <div class=" function_group_wrapper" style="height:170px;">
+                <div style="height:35px; border-bottom:1px solid #ddd;">
+                  <span class="function_group_title">站点统计</span>
                 </div>
                 
                 <div class="function_group">
@@ -133,8 +128,8 @@
                       <div class="content_center full_box">
                         <div class="info">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-read" style="font-size:20px;"></span>
-                            <span style="font:bold 16px/20px 宋体; vertical-align: text-bottom; padding-left:5px;">文章</span> 
+                            <img src="@/assets/imgs/icon/wenzhang.png" height="20" width="20"/>
+                            <span class="info_name">文章</span> 
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span>65</span>
@@ -147,8 +142,8 @@
                       <div class="content_center full_box">
                         <div class="info">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-eye" style="font-size:20px;"></span>
-                            <span style="font:bold 16px/20px 宋体; vertical-align: text-bottom; padding-left:5px;">访客</span> 
+                            <img src="@/assets/imgs/icon/fangke.png" height="20" width="20"/>
+                            <span class="info_name">访客</span> 
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span>65</span>
@@ -161,8 +156,8 @@
                       <div class="content_center full_box">
                         <div class="info">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-user" style="font-size:20px;"></span>
-                            <span style="font:bold 16px/20px 宋体; vertical-align: text-bottom; padding-left:5px;">用户</span> 
+                            <img src="@/assets/imgs/icon/yonghu.png" height="20" width="20"/>
+                            <span class="info_name">用户</span> 
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span>65</span>
@@ -175,8 +170,8 @@
                       <div class="content_center full_box">
                         <div class="info">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-message" style="font-size:20px;"></span>
-                            <span style="font:bold 16px/20px 宋体; vertical-align: text-bottom; padding-left:5px;">留言</span> 
+                            <img src="@/assets/imgs/icon/liuyan.png" height="20" width="20"/>
+                            <span class="info_name">留言</span> 
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span>65</span>
@@ -192,7 +187,7 @@
               
               <!--新的创作-->
               <div class=" function_group_wrapper" style="height:175px;">
-                <div style="height:35px;">
+                <div style="height:35px; border-bottom:1px solid #ddd;">
                   <span class="function_group_title">新的创作</span>
                 </div>
                 
@@ -200,9 +195,9 @@
                   <div style="height:150px;">
                     <div class="op_box" style="width:160px; height:125px;">
                       <div class="content_center full_box">
-                        <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item1.jpg') + ')'}">
+                        <div class="op_item" @click="$router.push('articlenew')" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item1.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-edit" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/xiewenzhang.png"  />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">文章</span>
@@ -213,9 +208,9 @@
                     
                     <div class="op_box" style="width:160px; height:125px;">
                       <div class="content_center full_box">
-                        <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item2.jpg') + ')'}">
+                        <div class="op_item"  @click="$router.push('essays')"  :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item2.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-file-add" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/suibi.png"/> 
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">随笔</span>
@@ -226,9 +221,9 @@
                     
                     <div class="op_box" style="width:160px; height:125px;">
                       <div class="content_center full_box">
-                        <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item3.jpg') + ')'}">
+                        <div class="op_item"  @click="$router.push('tags')"  :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item3.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-tag" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/biaoqian.png" />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">标签</span>
@@ -241,7 +236,7 @@
                       <div class="content_center full_box">
                         <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item4.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-file-image" style="font-size:20px;"></span>
+                            <img src="@/assets/imgs/icon/meiti.png"  />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">媒体</span>
@@ -255,7 +250,7 @@
               </div>
               
               <div class=" function_group_wrapper" style="height:175px;">
-                <div style="height:35px;">
+                <div style="height:35px; border-bottom:1px solid #ddd;">
                   <span class="function_group_title">管理</span>
                 </div>
                 
@@ -263,9 +258,9 @@
                   <div style="height:150px;">
                     <div class="op_box" style="width:160px; height:125px;">
                       <div class="content_center full_box">
-                        <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item5.jpg') + ')'}">
+                        <div class="op_item"  @click="$router.push('articles')"  :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item5.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-read" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/wzgl.png" />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">文章管理</span>
@@ -278,7 +273,7 @@
                       <div class="content_center full_box">
                         <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item6.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-book" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/sbgl.png" />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">随笔管理</span>
@@ -287,11 +282,11 @@
                       </div>
                     </div>
                     
-                    <div class="op_box" style="width:160px; height:125px;">
+                    <div class="op_box" style="width:160px; height:125px;" @click="$router.push('/tags')">
                       <div class="content_center full_box">
                         <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item7.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-diff" style="font-size:20px;"></span> 
+                            <img src="@/assets/imgs/icon/bqgl.png"  />
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">标签管理</span>
@@ -304,7 +299,7 @@
                       <div class="content_center full_box">
                         <div class="op_item" :style="{backgroundImage: 'url(' + require('@/assets/imgs/item/item8.jpg') + ')'}">
                           <div class="content_center" style="height:50%; width:100%;">
-                            <span class="iconfont icon-image" style="font-size:20px;"></span>
+                            <img src="@/assets/imgs/icon/mtgl.png"/>
                           </div>
                           <div class="content_center" style="height:50%; width:100%;">
                             <span style="font-size:13px;">媒体管理</span>
@@ -317,23 +312,24 @@
                 </div>
               </div>
               
-              <div class=" function_group_wrapper" style="height:175px;">
+              <div class=" function_group_wrapper" style="height:150px; ">
+                <div style="height:35px; border-bottom:1px solid #ddd;">
+                  <span class="function_group_title">每日格言</span>
+                </div>
                 <div class="function_group">
-                  <div style="height:100px; padding-top:15px;">
+                  <div style="height:100px; padding:15px;">
                     <p>不积跬步无以至千里，不积小流无以成江海。</p>
                     <p>路漫漫其修远兮，吾将上下而且所。</p>
                   </div>
-                  
                 </div>
               </div>
+
             </div>
           </div>
         </div>
         
         
       </div>
-      
-      
       <div class="col-md-2"></div>
       
       
@@ -367,7 +363,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 	a:hover {
 		cursor:pointer;
 	}
@@ -382,7 +378,7 @@ export default {
 	
 	#extra{
 		position:fixed;
-		top:66px;
+		top:65px;
 		height:80px; 
 		width: inherit;
     background-color: #fff;
@@ -391,8 +387,7 @@ export default {
 	}
 	
 	.extra_item {
-		border:1px solid #ccc;
-		box-shadow:0 0 1px 0 #aaa;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)  ; 
 		height:65px; width:60px; 
 		margin:0px 10px; 
 		border-radius:4px;
@@ -401,7 +396,7 @@ export default {
 	.extra_item:hover {
 		cursor:pointer ;
 		border:1px solid #87CEFA;
-		box-shadow:0 0 2px 0px #00BFFF;
+		box-shadow:0 0 2px 1px #87CEFA;
 	}
 	.extra_item .iconfont {
 		font-size:26px;
@@ -413,11 +408,12 @@ export default {
 	}
 	
 	.function_group_title {
-		font:bold 16px/40px SimSun; color:#555;
+		font:14px/40px SimSun; 
+    color:#555;
+    line-height: 35px;;
 	}
 	
 	.function_group_wrapper {
-		border-bottom:1px dashed #bbb ;
 		overflow-y: hidden;
 		height:150px;
 		padding-left:10px;
@@ -430,6 +426,7 @@ export default {
 		padding-bottom:25px;
 		box-sizing: content-box;
 		-webkit-overflow-scrolling: touch;
+    background-color: #fff;
 	}
 	.function_group::-webkit-scrollbar {display:none}
 	
@@ -443,8 +440,9 @@ export default {
 		height:185px; 
 		margin-right:20px;
 		flex-shrink: 0;
-		border:1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)  ; 
 		border-radius:4px;
+    padding:0;
 	}
 	
 	.article_title_box {
@@ -478,6 +476,11 @@ export default {
 		height:60px; 
 		margin-right:10px;
 	}
+
+  .info_name {
+    font:14px/20px 宋体; 
+    padding-left:5px;
+  }
 	
 	.op_box {
 		display:table-cell;
@@ -490,24 +493,25 @@ export default {
 		padding-bottom:10px;
 		margin-left:5px;
 		margin-right:5px;
-		border:1px solid #ccc;
 		border-radius:4px;
-		box-shadow:0 0 5px 0 #aaa;
+		box-shadow:0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)  ; 
 	}
 	
 	.op_item:hover {
 		cursor:pointer;
 		border:1px solid #87CEFA;
-		box-shadow:0 0 5px 0 #00BFFF;
+		box-shadow:0 0 2px 1px #87CEFA;
 	}
 	
-	.iconfont {
-		display:inline-table; 
-		color:black;
-		transition:all 0.5s;
-	}
-	.op_item:hover .iconfont {
+  .op_item img {
+    width:25px;
+    transition:all 0.5s;
+  }
+  
+	.op_item:hover img {
 		 transform:scale(1.25,1.25) ;
 		 -moz-transform:scale(1.25,1.25) ;
 	}
+
+  
 </style>

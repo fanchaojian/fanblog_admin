@@ -17,6 +17,8 @@ import essays from '@/views/essays.vue'
 //文章管理
 import articles from '@/views/articles.vue'
 
+import myHeader from '@/components/Header.vue'
+
 Vue.use(Router)
 
 const routes = [
@@ -47,10 +49,12 @@ const routes = [
   },{
     path:'/articles',
     component:articles
+  },{
+    path:'/myHeader',
+    component:myHeader
   }
 ] ; 
 
 export default new Router({
   routes: routes,
-  mode:'history'
 })

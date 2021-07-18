@@ -2,18 +2,10 @@
 <template>
   <div class="full_box">
     <!--header-->
-    <div class="content_center" style="position:fixed; top:0; height:50px; width:inherit; top:0;">
-      <div class="col-xs-3">
-        <img src="../assets/imgs/icon/back.png" width="25" height="25" alt="返回" />
-      </div>
-      <div class="col-xs-6" align="center" style="font-size:16px;">登录信息</div>
-      <div class="col-xs-3"></div>
+    <div style="position:fixed; top:0; width:inherit; top:0; z-index:1000;">
+      <my-header pageName="我的信息" doSearch="false" backPath="/" />
     </div>
 
-    <!--分割线-->
-    <div class="split_box">
-      <div class="split_line"></div>
-    </div>
     
     <div class="container-fluid" style="height:100%; padding-left:0; padding-right:0;">
       <div class="col-md-2"></div>
@@ -22,7 +14,7 @@
         <!--展示区域-->
         <div style="width:100%; height:100%; padding-top:50px; overflow-x:hidden;">
           <div style="width:100%; height:100%; box-sizing:content-box; padding-right:25px;  overflow-y:scroll;">
-            <div style="padding-left:10px; padding-right:10px; ">
+            <div style=" padding:0 10px 65px;">
               <!--博客名称-->
               <div class="siteinfo_item" style="margin-top:20px;">
                 <span class="title">管理员昵称</span>
@@ -138,7 +130,7 @@
               
               
               
-              <div class="content_center" style="width:100%; height:50px;  position:relative;">
+              <div class="content_center" style="width:100%;  position:relative;">
                 <div class="content_center" style="height:60px; position:fixed; width:inherit; bottom:0; background-color:#fff;">
                   <div class="doSomething" style="height:25px; width:80px; ">
                     <span @click="modify">修改</span>
@@ -148,8 +140,6 @@
                   </div>
                 </div>
               </div>
-              
-              
             </div>
           </div>
         </div>
@@ -162,12 +152,17 @@
 </template>
 
 <script>
+import myHeader from '@/components/Header.vue'
+
 export default {
   name:"loginInfo",
   data() {
     return {
       
     }
+  },
+  components:{
+    myHeader,
   },
   methods: {
     modify:function(){
@@ -183,7 +178,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
   
 	input {
 		border:0 ;
